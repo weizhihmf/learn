@@ -16,3 +16,15 @@ CREATE TABLE `user` (
 ALTER TABLE `user` ADD UNIQUE (`username`);
 ALTER TABLE `user` ADD UNIQUE (`email`);
 ALTER TABLE `user` ADD UNIQUE (`phone`);
+
+
+
+DROP TABLE IF EXISTS `library`;
+CREATE TABLE `library` (
+  `id` bigint(50) NOT NULL AUTO_INCREMENT,
+  `bookname` varchar(100) DEFAULT NULL comment '书名',
+  `author` varchar(255) DEFAULT NULL,
+  `publish` varchar(255) DEFAULT NULL,
+  `price` bigint(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
