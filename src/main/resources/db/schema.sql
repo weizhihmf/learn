@@ -25,6 +25,6 @@ CREATE TABLE `library` (
   `bookname` varchar(100) DEFAULT NULL comment '书名',
   `author` varchar(255) DEFAULT NULL,
   `publish` varchar(255) DEFAULT NULL,
-  `price` bigint(255) DEFAULT NULL,
+  `price` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
