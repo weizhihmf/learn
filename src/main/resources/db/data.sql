@@ -10,4 +10,11 @@ INSERT INTO `library` (bookname,author,publish,price) VALUES ('软工' ,'a','abc
 INSERT INTO `library` (bookname,author,publish,price) VALUES ('数据库' ,'b','abcd',49);
 INSERT INTO `library` (bookname,author,publish,price) VALUES ('数据结构' ,'c','abce',35);
 INSERT INTO `library` (bookname,author,publish,price) VALUES ('Java' ,'d','abcf',50);
+
+INSERT INTO `book` (bookname,author,publish,price) VALUES ('软工' ,'a','abc',69);
+INSERT INTO `book` (bookname,author,publish,price) VALUES ('数据库' ,'b','abcd',49);
+INSERT INTO `book` (bookname,author,publish,price) VALUES ('数据结构' ,'c','abce',35);
+INSERT INTO `book` (bookname,author,publish,price) VALUES ('Java' ,'d','abcf',50);
+
+
 COMMIT;
