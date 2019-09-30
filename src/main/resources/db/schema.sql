@@ -19,16 +19,6 @@ ALTER TABLE `user` ADD UNIQUE (`phone`);
 
 
 
-DROP TABLE IF EXISTS `library`;
-CREATE TABLE `library` (
-  `id` bigint(50) NOT NULL AUTO_INCREMENT,
-  `bookname` varchar(100) DEFAULT NULL comment '书名',
-  `author` varchar(255) DEFAULT NULL,
-  `publish` varchar(255) DEFAULT NULL,
-  `price` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-);
-
 DROP TABLE IF EXISTS `book`;
 CREATE TABLE `book` (
   `id` bigint(50) NOT NULL AUTO_INCREMENT,

@@ -36,13 +36,4 @@ public class IndexController {
         mav.setViewName("user");
         return mav;
     }
-
-    @RequestMapping("/book")
-    public ModelAndView book() {
-        ModelAndView mav = new ModelAndView();
-        Book book = bookService.getBook(1l);
-        mav.addObject("book", book);
-        mav.setViewName("book");
-        return mav;
-    }
 }

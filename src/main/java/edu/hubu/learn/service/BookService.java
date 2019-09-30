@@ -1,7 +1,10 @@
 package edu.hubu.learn.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 import edu.hubu.learn.dao.BookDao;
 import edu.hubu.learn.entity.Book;
@@ -14,5 +17,9 @@ public class BookService {
 
     public Book getBook(Long id) {
         return bookDao.findById(id).get();
+    }
+
+    public List<Book> getbooks(){
+        return bookDao.findAll();
     }
 }
