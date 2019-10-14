@@ -15,25 +15,46 @@
       <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
     <![endif]-->
+    <style>
+    .main{
+      position:absolute;
+      width:1170px;
+      top:20px;
+      left:20px;
+    }
+    .btnBox{
+      float:left;
+      width:200px;
+    }
+    </style>
 </head>
  <body>
-  <div class="container">
+  <div class="main">
     <div class="row">
-      <div class="col-md-4">
+      <div class="btnBox">
         <ul class="nav nav-pills nav-stacked">
           <li role="presentation"><a href="/book/list">列表</a></li>
           <li role="presentation" class="active"><a href="/book/add">新增</a></li>
+          <#--  <li role="presentation"><a href="/book/modify">修改</a></li>  -->
         </ul>
       </div>
       <div class="col-md-8">      
         <form action="/book/do_add">
             <div class="form-group">
-                <label for="bookname">用户名</label>
-                <input type="text" class="form-control" id="bookname" name="bookname" placeholder="请输入书名">
+                <label>书名</label>
+                <input type="text" class="form-control" name="bookname" placeholder="请输入书名">
             </div>
             <div class="form-group">
-                <label for="author">作者</label>
-                <input type="text" class="form-control" id="author" name="author" placeholder="请输入作者">
+                <label>作者</label>
+                <input type="text" class="form-control" name="author" placeholder="请输入作者">
+            </div>
+               <div class="form-group">
+                <label>出版社</label>
+                <input type="text" class="form-control" name="publish" placeholder="请输入出版社">
+            </div>
+               <div class="form-group">
+                <label>价格</label>
+                <input type="text" class="form-control" name="price" placeholder="请输入价格">
             </div>
             <button type="submit" class="btn btn-default">确认</button>
         </form>
