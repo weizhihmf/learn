@@ -28,12 +28,37 @@ public class BookController {
     }
 
     @RequestMapping("/list")
-    public ModelAndView list() {
+    public ModelAndView books() {
         ModelAndView mav = new ModelAndView(); 
-        List<Book> books =bookService.getbooks();
+        List<Book> books =bookService.getBooks();
         mav.addObject("books", books);
         mav.setViewName("list");
         return mav;
 
     }
+
+    @RequestMapping("/add")
+    public ModelAndView addBook() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("book_add");
+        return mav;
+    }
+
+    @RequestMapping("/do_add")
+    public ModelAndView doAddBook(Book book) {
+        bookService.addBook(book);
+        ModelAndView mav = new ModelAndView("redirect:/book/list");
+        return mav;
+    }
+
+    @RequestMapping("/delete/{id}")
+    public ModelAndView deleteBook(@PathVariable Long id) {
+        bookService.deleteBook(id);
+        ModelAndView mav = new ModelAndView("redirect:/book/list");
+        return mav;
+    }
+
+    @RequestMapping("/modify/{id}")
+    public ModelAndView modifyBook(@PathVariable Long id) {
+        ModelAndView mav = new ModelAndView();
 }

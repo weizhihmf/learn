@@ -8,18 +8,12 @@ import org.springframework.web.servlet.ModelAndView;
 import edu.hubu.learn.entity.User;
 import edu.hubu.learn.service.UserService;
 
-import edu.hubu.learn.entity.Book;
-import edu.hubu.learn.service.BookService;
-
 @Controller
 @RequestMapping("/")
 public class IndexController {
 
     @Autowired
     private UserService userService;
-
-    @Autowired
-    private BookService bookService;
 
     @RequestMapping("/")
     public ModelAndView index() {

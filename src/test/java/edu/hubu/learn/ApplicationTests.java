@@ -14,7 +14,7 @@ import junit.framework.TestCase;
 public class ApplicationTests {
 
     @Autowired
-    private UserService userService;
+	private UserService userService;
 
 	@Test
 	public void testUser() {
@@ -22,6 +22,12 @@ public class ApplicationTests {
 		String password = userService.getUser(1l).getPassword();
 		TestCase.assertEquals(username, "root");
 		TestCase.assertEquals(password, "1234");
+	}
+
+
+	@Test
+	public void addBook(){
+
 	}
 
 }
