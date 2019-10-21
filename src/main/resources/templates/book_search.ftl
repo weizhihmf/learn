@@ -16,15 +16,12 @@
       <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
     <![endif]-->
-
-    <style>
+     <style>
     .main{
       position:absolute;
       width:1170px;
-      top:0;
+      top:20px;
       left:20px;
-      text-align:center;
-      z-index:100;
     }
     .btnBox{
       float:left;
@@ -37,31 +34,19 @@
     <div class="row">
       <div class="btnBox">
         <ul class="nav nav-pills nav-stacked">
-          <li role="presentation" class="active"><a href="/book/list">列表</a></li>
+          <li role="presentation"><a href="/book/list">列表</a></li>
           <li role="presentation"><a href="/book/add">新增</a></li>
-          <li role="presentation"><a href="/book/search">搜索</a></li>
-          <#--  <li role="presentation"><a href="/book/modify/${book.id}">修改</a></li>  -->
+          <li role="presentation" class="active"><a href="/book/search">搜索</a></li>
         </ul>
       </div>
       <div class="col-md-8">      
-        <table class="table table-hover">
-          <thead>
-          <th>ID</th><th>书名</th><th>作者</th><th>出版社</th><th>价格</th><th colspan="2">操作</th>
-          </thead>
-          <tbody>
-          <#list books as book>
-          <tr>
-          <td>${book.id}</td>
-          <td>${book.bookname}</td>
-          <td>${book.author}</td>
-          <td>${book.publish}</td>
-          <td>${book.price}</td>
-          <td><a href="/book/delete/${book.id}">删除</a></td>
-          <td><a href="/book/modify/${book.id}">修改</a></td>
-          </tr>
-          </#list>
-          </tbody>
-        </table>
+        <form action="/book/do_search" method="get">
+            <div class="form-group">
+                <label for="keyword">关键词</label>
+                <input type="text" class="form-control" id="keyword" name="keyword" placeholder="请输入搜索关键词">
+            </div>
+            <button type="submit" class="btn btn-default">确认</button>
+        </form>
       </div>
     </div>
   </div>
@@ -71,4 +56,4 @@
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
   </body>
-</html> 
+</html>
