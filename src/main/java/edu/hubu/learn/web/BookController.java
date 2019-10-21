@@ -1,6 +1,6 @@
 package edu.hubu.learn.web;
 
-// import java.io.File;
+import java.io.File;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,8 +16,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import edu.hubu.learn.entity.Book;
 import edu.hubu.learn.service.BookService;
+import lombok.extern.slf4j.Slf4j;
 
 @Controller
+@Slf4j
 @RequestMapping("/book")
 public class BookController {
 
@@ -52,6 +54,7 @@ public class BookController {
 
     @RequestMapping("/do_add")
     public ModelAndView doAddBook(Book book) {
+        book.setCover("");
         bookService.addBook(book);
         ModelAndView mav = new ModelAndView("redirect:/book/list");
         return mav;
@@ -74,6 +77,7 @@ public class BookController {
 
     @RequestMapping("/do_modify")
         public ModelAndView doModifyBook(Book book) {
+            book.setCover("");
             bookService.modifyBook(book);
             ModelAndView mav = new ModelAndView("redirect:/book/list");
             return mav;
@@ -94,5 +98,30 @@ public class BookController {
         mav.addObject("books", books);
         mav.setViewName("list");
         return mav;
+    }
+
+        @RequestMapping("/add_cover/{id}")
+    public ModelAndView addUserAvatar(@PathVariable Long id) {
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("book", bookService.getBook(id));
+        mav.setViewName("book_add_cover");
+        return mav;
+    }
+
+    @RequestMapping("/do_add_cover/{id}")
+    public ModelAndView doAddUserAvatar(@RequestParam("cover") MultipartFile file, @PathVariable Long id) {
+        try {
+            String fileName = file.getOriginalFilename();
+            String filePath = ResourceUtils.getURL("classpath:").getPath() + "../../../resources/main/static/";
+            File dest = new File(filePath + fileName);
+            log.info(dest.getAbsolutePath());
+            file.transferTo(dest);
+            Book book = bookService.getBook(id);
+            book.setCover(fileName);
+            bookService.modifyBook(book);
+        } catch (Exception e) {
+            log.error("upload cover error", e.getMessage());
+        }
+        return new ModelAndView("redirect:/book/list");
     }
 }

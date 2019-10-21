@@ -46,7 +46,7 @@
       <div class="col-md-8">      
         <table class="table table-hover">
           <thead>
-          <th>ID</th><th>书名</th><th>作者</th><th>出版社</th><th>价格</th><th colspan="2">操作</th>
+          <th>ID</th><th>书名</th><th>作者</th><th>出版社</th><th>价格</th><th>封面</th><th colspan="3">操作</th>
           </thead>
           <tbody>
           <#list books as book>
@@ -56,8 +56,10 @@
           <td>${book.author}</td>
           <td>${book.publish}</td>
           <td>${book.price}</td>
+          <td>${book.cover}</td>
           <td><a href="/book/delete/${book.id}">删除</a></td>
           <td><a href="/book/modify/${book.id}">修改</a></td>
+           <td><a href="/book/add_cover/${book.id}">上传</a></td>
           </tr>
           </#list>
           </tbody>

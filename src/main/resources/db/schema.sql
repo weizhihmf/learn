@@ -26,5 +26,6 @@ CREATE TABLE `book` (
   `author` varchar(255) DEFAULT NULL,
   `publish` varchar(255) DEFAULT NULL,
   `price` varchar(255) DEFAULT NULL,
+  `cover` varchar(255) DEFAULT '' comment '封面',
   PRIMARY KEY (`id`)
 );

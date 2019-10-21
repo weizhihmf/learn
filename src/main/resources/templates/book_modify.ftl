@@ -58,6 +58,10 @@
                 <label>价格</label>
                 <input type="text" class="form-control" name="price" value="${book.price}" placeholder="请输入价格">
             </div>
+            <div class="form-group">
+                <label>封面</label>
+                <input type="text" class="form-control" name="cover" placeholder="请上传封面">
+            </div>
             <button type="submit" class="btn btn-default">确认</button>
         </form>
       </div>

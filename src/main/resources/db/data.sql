@@ -6,10 +6,10 @@ INSERT INTO `user` (id, username, password, role) VALUES ('5', 'user3', '1234', 
 INSERT INTO `user` (id, username, password, role) VALUES ('6', 'user4', '1234', 'user');
 
 
-INSERT INTO `book` (bookname,author,publish,price) VALUES ('软工' ,'a','abc',69);
-INSERT INTO `book` (bookname,author,publish,price) VALUES ('数据库' ,'b','abcd',49);
-INSERT INTO `book` (bookname,author,publish,price) VALUES ('数据结构' ,'c','abce',35);
-INSERT INTO `book` (bookname,author,publish,price) VALUES ('Java' ,'d','abcf',50);
+INSERT INTO `book` (bookname,author,publish,price,cover) VALUES ('软工' ,'a','abc',69,'');
+INSERT INTO `book` (bookname,author,publish,price,cover) VALUES ('数据库' ,'b','abcd',49,'');
+INSERT INTO `book` (bookname,author,publish,price,cover) VALUES ('数据结构' ,'c','abce',35,'');
+INSERT INTO `book` (bookname,author,publish,price,cover) VALUES ('Java' ,'d','abcf',50,'');
 
 
 COMMIT;

@@ -42,7 +42,7 @@
       <div class="col-md-8">      
         <form action="/book/do_search" method="get">
             <div class="form-group">
-                <label for="keyword">关键词</label>
+                <label for="keyword">输入关键词</label>
                 <input type="text" class="form-control" id="keyword" name="keyword" placeholder="请输入搜索关键词">
             </div>
             <button type="submit" class="btn btn-default">确认</button>
