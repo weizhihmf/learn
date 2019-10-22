@@ -91,7 +91,7 @@ public class BookController {
     }
 
     @RequestMapping("/do_search")
-        public ModelAndView doSearchUser(HttpServletRequest httpRequest) {
+        public ModelAndView doSearchBook(HttpServletRequest httpRequest) {
         ModelAndView mav = new ModelAndView();
         String keyword = httpRequest.getParameter("keyword");
         List<Book> books = bookService.searchBooks(keyword);
@@ -101,7 +101,7 @@ public class BookController {
     }
 
         @RequestMapping("/add_cover/{id}")
-    public ModelAndView addUserAvatar(@PathVariable Long id) {
+        public ModelAndView addBookCover(@PathVariable Long id) {
         ModelAndView mav = new ModelAndView();
         mav.addObject("book", bookService.getBook(id));
         mav.setViewName("book_add_cover");
@@ -109,7 +109,7 @@ public class BookController {
     }
 
     @RequestMapping("/do_add_cover/{id}")
-    public ModelAndView doAddUserAvatar(@RequestParam("cover") MultipartFile file, @PathVariable Long id) {
+    public ModelAndView doAddBookCover(@RequestParam("cover") MultipartFile file, @PathVariable Long id) {
         try {
             String fileName = file.getOriginalFilename();
             String filePath = ResourceUtils.getURL("classpath:").getPath() + "../../../resources/main/static/";
